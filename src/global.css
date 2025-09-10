@@ -1,0 +1,24 @@
+:root {
+  --preto: #0d0d0e;
+  --amarelo: #FFD60A;
+  --cinza: #2C2C2C;
+  --branco: #FFFFFF;
+  --cinza-claro: #ccc;
+  --font-family: 'Arial', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cinza);
+  color: var(--cinza-claro);
+}
+
+body, input, button, textarea {
+  font-size: 1rem;
+  font-family: var(--font-family);
+}

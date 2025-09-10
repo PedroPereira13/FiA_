@@ -1,0 +1,121 @@
+.Cabecalho {
+  background-color: var(--cinza);
+  padding: 1rem 2rem;
+  box-shadow: var(--preto);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoContainer h1 {
+  color: var(--amarelo);
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.navLinks {
+  text-align: right;
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: var(--cinza-claro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--amarelo);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--amarelo);
+  transition: width 0.3s;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.signInButton {
+  background-color: var(--amarelo);
+  color: var(--preto);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.signInButton:hover {
+  background-color: var(--preto);
+  color: var(--amarelo);
+  outline: 1px solid var(--amarelo);
+}
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--amarelo);
+  color: var(--preto);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoutButton {
+  background: transparent;
+  border: none;
+  color: var(--cinza-claro);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.logoutButton:hover {
+  color: var(--amarelo);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .Cabecalho {
+    padding: 1rem;
+  }
+
+  .navLinks {
+    gap: 1rem;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+  }
+}

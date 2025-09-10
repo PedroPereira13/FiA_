@@ -1,0 +1,175 @@
+.sobre-nos-container {
+  font-family: var(--font-family);
+  color: var(--branco);
+  background-color: var(--preto);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.x{
+  display: grid
+;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+/* Header */
+.sobre-header {
+  background-color: var(--cinza);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.sobre-header h1 {
+  
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.destaque {
+  color: var(--amarelo);
+}
+
+/* Grids */
+.grid-duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-tres-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-quatro-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+/* Cards */
+.card {
+  background-color: var(--cinza);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: var(--amarelo);
+  margin-bottom: 15px;
+}
+
+/* Seções */
+.missao-visao, .diferenciais, .equipe, .cta-final {
+  padding: 80px 0;
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--amarelo);
+}
+
+/* Diferenciais */
+.diferencial-item {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background-color: var(--cinza);
+  transition: transform 0.3s ease;
+}
+
+.icone {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.diferencial-item h3 {
+  color: var(--amarelo);
+  margin-bottom: 15px;
+}
+
+/* Equipe */
+.descricao-equipe {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.membro-equipe {
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  background-color: var(--cinza-claro);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.membro-equipe h3 {
+  margin-bottom: 5px;
+}
+
+.membro-equipe p {
+  color: var(--cinza-claro);
+}
+
+/* CTA */
+.cta-final {
+  background-color: var(--cinza);
+  text-align: center;
+}
+
+.cta-final h2 {
+  margin-bottom: 20px;
+}
+
+.cta-final p {
+  margin-bottom: 30px;
+}
+
+.btn-primario {
+  background-color: var(--amarelo);
+  color: var(--preto);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primario:hover {
+  background-color: var(--preto);
+  color: var(--amarelo);
+  outline: 1px solid var(--amarelo);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid-duas-colunas, 
+  .grid-tres-colunas, 
+  .grid-quatro-colunas {
+    grid-template-columns: 1fr;
+  }
+  
+  .sobre-header, 
+  .missao-visao, 
+  .diferenciais, 
+  .equipe, 
+  .cta-final {
+    padding: 50px 0;
+  }
+}

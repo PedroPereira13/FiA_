@@ -1,0 +1,260 @@
+:root {
+  --preto: #0d0d0e;
+  --pretoSla: #1a1a1a;
+  --amarelo: #FFD60A;
+  --cinza: #2C2C2C;
+  --branco: #FFFFFF;
+  --cinza-claro: #ccc;
+  --font-family: 'Arial', sans-serif;
+}
+.chatbotSection {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--cinza);
+}
+
+h2 {
+  text-align: center;
+  color: var(--amarelo);
+  margin-bottom: 1.5rem;
+}
+
+/* Container geral do chat */
+.chatContainer {
+  background-color: var(--cinza);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  overflow: hidden;
+}
+
+/* Cabeçalho do chat */
+.chatHeader {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--amarelo);
+  background-color: var(--cinza);
+  color: #FFD60A;
+}
+
+.chatAvatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color:var(--amarelo);
+  color: #1F1F1F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Container das mensagens */
+.chatMessages {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  background-color: var(--pretoSla);
+  scroll-behavior: smooth;
+}
+
+/* Mensagens do usuário e bot */
+.message {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  word-wrap: break-word;
+}
+
+.messageUser {
+  align-self: flex-end;
+  background-color: var(--amarelo);
+  color: var(--preto);
+  border-bottom-right-radius: 0;
+}
+
+.messageBot {
+  align-self: flex-start;
+  background-color: var(--cinza);
+  color: var(--branco);
+  border-bottom-left-radius: 0;
+}
+
+/* Indicador de digitação */
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+}
+
+.typingIndicator span {
+  width: 6px;
+  height: 6px;
+  background-color: var(--amarelo);
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typingIndicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* Input e botão */
+.chatInput {
+  display: flex;
+  border-top: 1px solid var(--amarelo);
+  background-color: var(--cinza);
+  padding: 0.5rem;
+}
+
+.chatInput input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.chatInput button {
+  margin-left: 0.5rem;
+  padding: 0.75rem 1.2rem;
+  background-color: var(--amarelo);
+  color: var(--preto);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.chatInput button:hover {
+  background-color: var(--preto);
+  color: var(--amarelo);
+  outline: 1px solid var(--amarelo);
+}
+
+/* Disclaimer abaixo do chat */
+.disclaimer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--cinza-claro);
+}
+
+/* === LOGIN / CADASTRO === */
+.loginContainer {
+  background: var(--pretoSla);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loginForm.hidden {
+  display: none;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: var(--amarelo);
+}
+
+.formGroup input {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--preto);
+  background: var(--cinza-claro);
+  color: var(--amarelo);
+  outline: none;
+  transition: border 0.2s;
+}
+
+.formGroup input:focus {
+  border-color: var(--amarelo);
+}
+
+.btnLogin {
+  padding: 0.7rem;
+  background: var(--amarelo);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--cinza);
+  transition: background 0.3s;
+}
+
+.btnLogin:hover {
+  background-color: var(--preto);
+  color: var(--amarelo);
+  outline: 1px solid var(--amarelo);
+}
+
+.toggleForm {
+  font-size: 0.9rem;
+  color: var(--branco);
+  text-align: center;
+}
+
+.toggleForm a {
+  color: var(--amarelo);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .chatContainer {
+    height: 500px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .chatInput input {
+    font-size: 0.9rem;
+  }
+
+  .chatInput button {
+    font-size: 0.9rem;
+  }
+}
