@@ -15,7 +15,7 @@
 ## 📝 Descrição do projeto  
 Nosso projeto tenta solucionar o problema que brasileiros têm de administrar suas finanças, resolvendo essa dificuldade com uma **IA que auxilia na administração financeira**.
 
-##Deploy
+## Deploy
 https://fia20.vercel.app/
 
 ## ⚙️ Instruções de Setup  
