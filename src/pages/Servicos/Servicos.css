@@ -201,7 +201,7 @@ h2 {
   border-radius: 8px;
   border: 1px solid var(--preto);
   background: var(--cinza-claro);
-  color: var(--amarelo);
+  color: var(--preto);
   outline: none;
   transition: border 0.2s;
 }

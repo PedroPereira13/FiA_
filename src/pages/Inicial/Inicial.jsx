@@ -10,7 +10,7 @@ const Inicial = () => {
           investimentos, reduzir custos e maximizar seus rendimentos de forma
           automática e inteligente.
         </p>
-        <button class="cta-button">Comece Agora</button>
+        <Link path="/servicos" element={<Servicos />}><button class="cta-button">Comece Agora</button></Link>
       </section>
 
       <section class="features">
