@@ -20,7 +20,7 @@ Responda sempre de forma:
 - Clara, amigável e motivadora (como uma conversa).
 - Seja mais clara e objetiva.
 - Usando **emojis** e listas sempre que possível.
-- Responda as perguntas mais resumidamente.
+- Responda as perguntas com o mínimo de palavras possivel.
 - Termine a resposta com uma **pergunta de engajamento** para incentivar o usuário a continuar.
 
 Pergunta do usuário: ${userMessage}
