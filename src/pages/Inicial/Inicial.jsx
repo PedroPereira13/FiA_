@@ -3,7 +3,10 @@ import "./Inicial.css";
 import { Link } from "react-router-dom";
 import { Servicos } from "../Servicos";
 
-const Inicial = () => {
+import { Link } from "react-router-dom";
+import { Servicos } from "../Servicos";
+
+function Inicial() {
   return (
     <div class="container">
       <section class="hero">
@@ -110,6 +113,6 @@ const Inicial = () => {
       </section>
     </div>
   );
-};
+}
 
 export { Inicial };

@@ -1,4 +1,5 @@
 import style from "./Rodape.module.css";
+
 import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 
 const Rodape = (props) => {
