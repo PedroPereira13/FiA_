@@ -37,8 +37,7 @@ function Inicial() {
           <div class="feature-icon">🔒</div>
           <h3>Segurança Máxima</h3>
           <p>
-            Proteção de dados de nível bancário com criptografia avançada e
-            monitoramento contínuo contra fraudes.
+            Tenha seu dinheiro nos investimentos mais seguros e mais lucrativos
           </p>
         </div>
       </section>
