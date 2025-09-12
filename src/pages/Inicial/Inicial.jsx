@@ -37,7 +37,7 @@ function Inicial() {
           <div class="feature-icon">🔒</div>
           <h3>Segurança Máxima</h3>
           <p>
-            Tenha seu dinheiro nos investimentos mais seguros e mais lucrativos
+            Tenha seu dinheiro nos investimentos mais seguros e mais lucrativos.
           </p>
         </div>
       </section>
