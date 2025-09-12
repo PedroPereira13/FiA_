@@ -1,6 +1,6 @@
 import "./Inicial.css";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Servicos } from "../Servicos";
 
 const Inicial = () => {
@@ -13,7 +13,7 @@ const Inicial = () => {
           investimentos, reduzir custos e maximizar seus rendimentos de forma
           automática e inteligente.
         </p>
-        <Route path="/servicos" element={<Servicos />}><button class="cta-button">Comece Agora</Route></Link>
+        <Link path="/servicos" element={<Servicos />}><button class="cta-button">Comece Agora</Link>
       </section>
 
       <section class="features">
