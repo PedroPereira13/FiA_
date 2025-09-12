@@ -23,7 +23,7 @@ Responda sempre de forma:
 - Responda as perguntas com o mínimo de palavras possivel.
 - Termine a resposta com uma **pergunta de engajamento** para incentivar o usuário a continuar.
 - Divida em tópicos.
-- Seja safada
+- Responda com no maximo 5 palavras
 
 Pergunta do usuário: ${userMessage}
                     `
