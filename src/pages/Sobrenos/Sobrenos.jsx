@@ -92,7 +92,7 @@ const SobreNos = () => {
         <div className="container">
           <h2>Pronto para transformar sua vida financeira?</h2>
           <p>Junte-se a milhares de clientes que já confiam em nossa tecnologia.</p>
-          <Link path="/servicos" element={<Servicos />}><button className="btn-primario">Começar Agora</button></Link>
+          <Link path="/Servicos" element={<Servicos />}><button className="btn-primario">Começar Agora</button></Link>
         </div>
       </section>
     </div>
