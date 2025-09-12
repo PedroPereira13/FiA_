@@ -4,19 +4,34 @@ export const chatService = {
     const MODEL = "gemini-1.5-flash"; 
 
     try {
-      const response = await fetch("https://api.google.com/gemini/v1/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${API_KEY}`,
-        },
-        body: JSON.stringify({
-          model: MODEL,
-          prompt: userMessage,
-          max_tokens: 150,
-          temperature: 0.7,
-        }),
-      });
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${API_KEY}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  {
+                    text: `
+Você é a **FiA**, uma consultora de uma startup de finanças pessoais.
+Responda sempre de forma:
+- Clara, amigável e motivadora (como uma conversa).
+- Seja mais clara e objetiva.
+- Usando **emojis** e listas sempre que possível.
+- Responda as perguntas com o mínimo de palavras possivel.
+- Apenas um paragrafo.
+
+Pergunta do usuário: ${userMessage}
+                    `
+                  }
+                ],
+              },
+            ],
+          }),
+        }
+      );
 
       const data = await response.json();
 

@@ -1,7 +1,3 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import { Servicos } from "../Servicos";
-
 import './Sobrenos.css';
 
 import { Link } from "react-router-dom";

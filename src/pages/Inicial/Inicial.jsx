@@ -3,9 +3,6 @@ import "./Inicial.css";
 import { Link } from "react-router-dom";
 import { Servicos } from "../Servicos";
 
-import { Link } from "react-router-dom";
-import { Servicos } from "../Servicos";
-
 function Inicial() {
   return (
     <div class="container">
@@ -16,7 +13,7 @@ function Inicial() {
           investimentos, reduzir custos e maximizar seus rendimentos de forma
           automática e inteligente.
         </p>
-        <Link path="/servicos" element={<Servicos />}><button class="cta-button">Comece Agora</Link>
+        <Link path="/servicos" element={<Servicos />} class="cta-button">Comece Agora</Link>
       </section>
 
       <section class="features">
