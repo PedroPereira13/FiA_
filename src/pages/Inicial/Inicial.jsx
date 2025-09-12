@@ -1,5 +1,8 @@
 import "./Inicial.css";
 
+import { Link } from "react-router-dom";
+import { Servicos } from "../Servicos";
+
 const Inicial = () => {
   return (
     <div class="container">
