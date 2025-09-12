@@ -16,7 +16,7 @@
 Nosso projeto tenta solucionar o problema que brasileiros têm de administrar suas finanças, resolvendo essa dificuldade com uma **IA que auxilia na administração financeira**.
 
 ## Deploy
-https://fi-a-v165.vercel.app/servicos
+https://fi-a-v165.vercel.app
 
 ## ⚙️ Instruções de Setup  
 - **Node.js:** `v22.19.0`  
