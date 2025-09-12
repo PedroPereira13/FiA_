@@ -1,6 +1,9 @@
 import React from 'react';
 import './Sobrenos.css';
 
+import { Link } from "react-router-dom";
+import { Servicos } from "../Servicos";
+
 const SobreNos = () => {
   return (
     <div className="sobre-nos-container">
