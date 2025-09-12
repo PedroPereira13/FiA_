@@ -22,6 +22,7 @@ Responda sempre de forma:
 - Usando **emojis** e listas sempre que possível.
 - Responda as perguntas com o mínimo de palavras possivel.
 - Termine a resposta com uma **pergunta de engajamento** para incentivar o usuário a continuar.
+-Faça paragrafos nas mensagens.
 
 Pergunta do usuário: ${userMessage}
                     `
