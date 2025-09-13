@@ -12,7 +12,7 @@ const SobreNos = () => {
             <div>
                 
             </div>
-          <h1>Sobre a <span className="destaque">FinAI</span></h1>
+          <h1>Sobre a <span className="destaque">FiA</span></h1>
           <p>Revolucionando o mundo das finanças com inteligência artificial</p><br></br>
           <p>Nossa trajetória teve início através da participação no projeto Hackateen, um desafio acadêmico promovido pela Venturus na Faculdade de Tecnologia de Americana (Fatec).
              Durante o evento, os organizadores nos apresentaram todas as diretrizes, regulamentos e objetivos que deveríamos seguir no desenvolvimento do nosso projeto, estabelecendo as
