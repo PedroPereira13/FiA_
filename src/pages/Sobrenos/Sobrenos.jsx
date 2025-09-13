@@ -1,6 +1,6 @@
 import './Sobrenos.css';
 
-import { Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Servicos } from "../Servicos";
 
 const SobreNos = () => {
@@ -91,7 +91,7 @@ const SobreNos = () => {
         <div className="container">
           <h2>Pronto para transformar sua vida financeira?</h2>
           <p>Junte-se a milhares de clientes que já confiam em nossa tecnologia.</p>
-          <Link path="/servicos" element={<Servicos />} className="btn-primario">Começar Agora</Link>
+          <Route path="/servicos" element={<Servicos />} className="btn-primario">Começar Agora</Route>
         </div>
       </section>
     </div>
