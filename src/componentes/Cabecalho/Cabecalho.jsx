@@ -16,7 +16,7 @@ const Cabecalho = () => {
           <Link to="/" className={styles.navLink}>
             Home
           </Link>
-          <Link to="/SobreNos" className={styles.navLink}>
+          <Link to="/Sobrenos" className={styles.navLink}>
             Sobre Nós
           </Link>
           <Link to="/servicos" className={styles.navLink}>
