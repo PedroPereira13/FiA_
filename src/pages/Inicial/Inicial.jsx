@@ -66,7 +66,7 @@ function Inicial() {
         <div class="testimonial-cards">
           <div class="testimonial-card">
             <p class="testimonial-text">
-              A FinAI transformou completamente minha relação com o dinheiro. Em
+              A FiA transformou completamente minha relação com o dinheiro. Em
               3 meses já obtive retornos que não conseguiria em anos com meus
               métodos anteriores.
             </p>
