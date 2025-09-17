@@ -3,7 +3,7 @@ import './Sobrenos.css';
 import { Route } from "react-router-dom";
 import { Servicos } from "../Servicos";
 
-const SobreNos = () => {
+const Sobrnos = () => {
   return (
     <div className="sobre-nos-container">
       {/* Header */}
@@ -98,4 +98,4 @@ const SobreNos = () => {
   );
 };
 
-export {SobreNos};
+export {Sobrenos};
