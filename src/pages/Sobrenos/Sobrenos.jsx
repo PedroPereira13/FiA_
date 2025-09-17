@@ -1,6 +1,6 @@
 import './Sobrenos.css';
 
-import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Servicos } from "../Servicos";
 
 const Sobrenos = () => {
@@ -91,11 +91,13 @@ const Sobrenos = () => {
         <div className="container">
           <h2>Pronto para transformar sua vida financeira?</h2>
           <p>Junte-se a milhares de clientes que já confiam em nossa tecnologia.</p>
-          <Route path="/servicos" element={<Servicos />} className="btn-primario">Começar Agora</Route>
+          
+          <Link to="/servicos" element={<Servicos />} className="btn-primario">Começar Agora</Link>
+        
         </div>
       </section>
     </div>
-  );
+  )
 };
 
 export {Sobrenos};
