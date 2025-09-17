@@ -15,7 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Inicial />} />
           <Route path="/servicos" element={<Servicos />} />
-          <Route path="/sobre" element={<SobreNos />} />
+          <Route path="/Sobrenos" element={<Sobrenos />} />
         </Routes>
       </Conteudo>
       <Rodape criador="Pedro Antonio" />
