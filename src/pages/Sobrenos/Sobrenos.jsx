@@ -3,7 +3,7 @@ import './Sobrenos.css';
 import { Route } from "react-router-dom";
 import { Servicos } from "../Servicos";
 
-const Sobrnos = () => {
+const Sobrenos = () => {
   return (
     <div className="sobre-nos-container">
       {/* Header */}
