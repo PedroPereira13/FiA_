@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Cabecalho, Conteudo, Rodape } from "./componentes";
 import { Inicial } from "./pages/Inicial";
 import { Servicos } from "./pages/Servicos";
-import { SobreNos } from "./pages/Sobrenos/Sobrenos";
+import { Sobrenos } from "./pages/Sobrenos/Sobrenos";
 
 import "./App.css";
 
