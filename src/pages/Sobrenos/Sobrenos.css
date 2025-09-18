@@ -12,7 +12,7 @@
 
 .x {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
 
@@ -32,10 +32,22 @@
   color: var(--amarelo);
 }
 
-/* Grid fixa em 3 colunas */
+/* Grids */
+.grid-duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
 .grid-tres-colunas {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-quatro-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
 }
 
@@ -149,9 +161,10 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .x,
-  .grid-tres-colunas {
-    grid-template-columns: 1fr; /* no celular fica 1 coluna */
+  .grid-duas-colunas,
+  .grid-tres-colunas,
+  .grid-quatro-colunas {
+    grid-template-columns: 1fr;
   }
 
   .sobre-header,
