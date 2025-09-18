@@ -80,7 +80,7 @@ function Inicial() {
           </div>
           <div class="testimonial-card">
             <p class="testimonial-text">
-              Como pequeno empresário, a análise preditiva da FinAI me ajudou a
+              Como pequeno empresário, a análise preditiva da FiA me ajudou a
               tomar decisões cruciais que aumentaram meu fluxo de caixa em 45%.
             </p>
             <div class="testimonial-author">
