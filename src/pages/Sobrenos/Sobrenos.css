@@ -99,6 +99,7 @@
 /* Equipe */
 .descricao-equipe {
   text-align: center;
+  space: around;
   margin-bottom: 50px;
   max-width: 600px;
   margin-left: auto;
