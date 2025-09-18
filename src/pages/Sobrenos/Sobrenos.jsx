@@ -23,7 +23,7 @@ const Sobrenos = () => {
       {/* Missão e Visão */}
       <section className="missao-visao">
         <div className="container">
-          <div className="grid-duas-colunas">
+          <div className="x">
             <div className="card">
               <h2>Nossa Missão</h2>
               <p>Democratizar o acesso a ferramentas financeiras inteligentes, utilizando IA para oferecer insights precisos e personalizados que ajudam pessoas e empresas a tomar decisões financeiras mais assertivas.</p>
@@ -40,7 +40,7 @@ const Sobrenos = () => {
       <section className="diferenciais">
         <div className="container">
           <h2 className="titulo-secao">Nossos Diferenciais</h2>
-          <div className="grid-tres-colunas">
+          <div className="xs">
             <div className="diferencial-item">
               <div className="icone">🤖</div>
               <h3>IA Especializada</h3>
@@ -65,7 +65,7 @@ const Sobrenos = () => {
         <div className="container">
           <h2 className="titulo-secao">Nossa Equipe</h2>
           <p className="descricao-equipe">Combinamos expertise em finanças, tecnologia e ciência de dados para criar soluções inovadoras.</p>
-          <div className="grid-quatro-colunas">
+          <div className="x">
             <div className="membro-equipe">
               <div className="avatar"></div>
               <h3>Pedro Pereira</h3>
