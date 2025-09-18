@@ -18,6 +18,9 @@ Nosso projeto tenta solucionar o problema que brasileiros têm de administrar su
 ## Deploy
 https://fi-a-v165.vercel.app
 
+## Video de apresentação
+https://drive.google.com/file/d/1E_PYthsnM77PV3zCU9viFkH0pSLBEkpb/view?usp=drivesdk
+
 ## ⚙️ Instruções de Setup  
 - **Node.js:** `v22.19.0`  
 - **Comandos:**  
