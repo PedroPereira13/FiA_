@@ -65,7 +65,7 @@ const Sobrenos = () => {
         <div className="container">
           <h2 className="titulo-secao">Nossa Equipe</h2>
           <p className="descricao-equipe">Combinamos expertise em finanças, tecnologia e ciência de dados para criar soluções inovadoras.</p>
-          <div className="grid-tres-colunas">
+          <div className="grid-quatro-colunas">
             <div className="membro-equipe">
               <div className="avatar"></div>
               <h3>Pedro Pereira</h3>
@@ -97,3 +97,4 @@ const Sobrenos = () => {
 };
 
 export {Sobrenos};
+
