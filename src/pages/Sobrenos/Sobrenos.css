@@ -10,12 +10,12 @@
   padding: 0 20px;
 }
 
-.x {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+.x{
+  display: grid
+;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 }
-
 /* Header */
 .sobre-header {
   background-color: var(--cinza);
@@ -24,6 +24,7 @@
 }
 
 .sobre-header h1 {
+  
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -65,10 +66,7 @@
 }
 
 /* Seções */
-.missao-visao,
-.diferenciais,
-.equipe,
-.cta-final {
+.missao-visao, .diferenciais, .equipe, .cta-final {
   padding: 80px 0;
 }
 
@@ -161,16 +159,16 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .grid-duas-colunas,
-  .grid-tres-colunas,
+  .grid-duas-colunas, 
+  .grid-tres-colunas, 
   .grid-quatro-colunas {
     grid-template-columns: 1fr;
   }
-
-  .sobre-header,
-  .missao-visao,
-  .diferenciais,
-  .equipe,
+  
+  .sobre-header, 
+  .missao-visao, 
+  .diferenciais, 
+  .equipe, 
   .cta-final {
     padding: 50px 0;
   }
