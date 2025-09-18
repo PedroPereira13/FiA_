@@ -78,10 +78,6 @@ const Sobrenos = () => {
               <div className="avatar"></div>
               <h3>Lucca Faria</h3>
             </div>
-            <div className="membro-equipe">
-              <div className="avatar"></div>
-              <h3>Raphael Garcia</h3>
-            </div>
           </div>
         </div>
       </section>
