@@ -52,6 +52,15 @@
   gap: 30px;
 }
 
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  justify-items: center; /* centraliza cada item horizontalmente */
+  gap: 40px; /* espaço entre os membros */
+  max-width: 900px; /* opcional, limita a largura da grid */
+  margin: 0 auto; /* centraliza a grid na página */
+}
+
 /* Cards */
 .card {
   background-color: var(--cinza);
