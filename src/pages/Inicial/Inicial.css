@@ -1,31 +1,30 @@
 :root {
-    --preto: #0d0d0e;
-    --amarelo: #FFD60A;
-    --cinza: #2C2C2C;
-    --branco: #FFFFFF;
-    --font-family: 'Arial', sans-serif;
+    --cor-preta: #0d0d0e;
+    --cor-amarela: #ffd60a;
+    --cor-cinza: #2c2c2c;
+    --cor-branca: #ffffff;
+    --fonte-principal: 'Arial', sans-serif;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-family);
+    font-family: var(--fonte-principal);
 }
 
 body {
-
-    background-color: var(--preto);
-    color: var(--amarelo);
-    
+    background-color: var(--cor-preta);
+    color: var(--cor-amarela);
 }
 
-.container {
+.caixa {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.hero {
+.principal {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,85 +32,84 @@ body {
     padding: 4rem 1rem;
 }
 
-.hero h1 {
+.principal h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    color: (var(--amarelo));
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: var(--cor-amarela);
 }
 
-.hero p {
+.principal p {
     font-size: 1.2rem;
     max-width: 700px;
     margin-bottom: 2rem;
-    color: var(--cinza-claro);
+    color: #bbbbbb;
 }
 
-.cta-button {
-    background-color: var(--amarelo);
-    color: var(--preto);
+.botao {
+    background-color: var(--cor-amarela);
+    color: var(--cor-preta);
     border: none;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
     font-weight: 600;
     transition: all 0.2s;
+    text-decoration: none;
 }
 
-.cta-button:hover { 
-  background-color: var(--preto);
-  color: var(--amarelo);
-  outline: 1px solid var(--amarelo);
+.botao:hover {
+    background-color: var(--cor-preta);
+    color: var(--cor-amarela);
+    outline: 1px solid var(--cor-amarela);
 }
 
-.features {
+.recursos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 5rem 0;
 }
 
-.feature-card {
-    background-color: var(--cinza);
+.card-recurso {
+    background-color: var(--cor-cinza);
     padding: 2rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
-.feature-card:hover {
+.card-recurso:hover {
     transform: translateY(-10px);
 }
 
-.feature-icon {
+.icone-recurso {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--amarelo);
+    color: var(--cor-amarela);
 }
 
-.feature-card h3 {
+.card-recurso h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.feature-card p {
+.card-recurso p {
     color: #ccc;
 }
 
-.demo-section {
-    background-color: var(--cinza);
+.demo {
+    background-color: var(--cor-cinza);
     padding: 4rem 2rem;
     border-radius: 15px;
     margin: 5rem 0;
     text-align: center;
 }
 
-.demo-section h2 {
+.demo h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
 }
 
-.demo-container {
+.caixa-demo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,10 +117,10 @@ body {
     gap: 2rem;
 }
 
-.demo-chart {
+.grafico-demo {
     width: 300px;
     height: 300px;
-    background: linear-gradient(145deg, var(--preto), var(--cinza));
+    background: linear-gradient(145deg, var(--cor-preta), var(--cor-cinza));
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -131,104 +129,102 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.demo-chart::before {
+.grafico-demo::before {
     content: '';
     position: absolute;
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: conic-gradient(var(--amarelo) 70%, var(--cinza) 0);
+    background: conic-gradient(var(--cor-amarela) 70%, var(--cor-cinza) 0);
 }
 
-.demo-chart::after {
+.grafico-demo::after {
     content: '';
     position: absolute;
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: var(--preto);
+    background-color: var(--cor-preta);
 }
 
-.demo-text {
+.texto-demo {
     max-width: 500px;
     text-align: left;
-    color: var(--cinza-claro);
+    color: #bbbbbb;
 }
 
-.demo-text h3 {
+.texto-demo h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: var(--amarelo);
+    color: var(--cor-amarela);
 }
 
-.testimonials {
+.comentarios {
     margin: 5rem 0;
 }
 
-.testimonials h2 {
+.comentarios h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
 }
 
-.testimonial-cards {
+.caixa-comentario {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.testimonial-card {
-    background-color: var(--cinza);
+.card-comentario {
+    background-color: var(--cor-cinza);
     padding: 2rem;
     border-radius: 10px;
     position: relative;
 }
 
-.testimonial-card::before {
+.card-comentario::before {
     content: '"';
     font-size: 5rem;
-    color: var(--amarelo);
+    color: var(--cor-amarela);
     opacity: 0.3;
     position: absolute;
     top: -10px;
     left: 10px;
 }
 
-.testimonial-text {
-
+.texto-comentario {
     margin-bottom: 1.5rem;
     font-style: italic;
 }
 
-.testimonial-author {
+.autor {
     display: flex;
     align-items: center;
-    
 }
 
-.author-avatar {
+.foto-autor {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: var(--amarelo);
+    background-color: var(--cor-amarela);
     margin-right: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    color: var(--preto);
+    color: var(--cor-preta);
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
+    .principal h1 {
         font-size: 2.5rem;
     }
-    
-    .demo-container {
+
+    .caixa-demo {
         flex-direction: column;
     }
-    
-    .demo-text {
+
+    .texto-demo {
         text-align: center;
     }
 }

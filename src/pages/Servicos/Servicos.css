@@ -7,7 +7,8 @@
   --cinza-claro: #ccc;
   --font-family: 'Arial', sans-serif;
 }
-.chatbotSection {
+
+.telaChat {
   max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
@@ -21,8 +22,8 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-/* Container geral do chat */
-.chatContainer {
+/* Caixa geral do chat */
+.caixaChat {
   background-color: var(--cinza);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
@@ -32,8 +33,8 @@ h2 {
   overflow: hidden;
 }
 
-/* Cabeçalho do chat */
-.chatHeader {
+/* Topo do chat */
+.topoChat {
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -42,11 +43,11 @@ h2 {
   color: #FFD60A;
 }
 
-.chatAvatar {
+.iconeChat {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color:var(--amarelo);
+  background-color: var(--amarelo);
   color: #1F1F1F;
   display: flex;
   align-items: center;
@@ -56,8 +57,8 @@ h2 {
   font-size: 1.2rem;
 }
 
-/* Container das mensagens */
-.chatMessages {
+/* Mensagens */
+.mensagensChat {
   flex: 1;
   padding: 1rem;
   display: flex;
@@ -68,68 +69,67 @@ h2 {
   scroll-behavior: smooth;
 }
 
-/* Mensagens do usuário e bot */
-.message {
+.msg {
   max-width: 70%;
   padding: 0.75rem 1rem;
   border-radius: 12px;
   word-wrap: break-word;
 }
 
-.messageUser {
+.msgUser {
   align-self: flex-end;
   background-color: var(--amarelo);
   color: var(--preto);
   border-bottom-right-radius: 0;
 }
 
-.messageBot {
+.msgBot {
   align-self: flex-start;
   background-color: var(--cinza);
   color: var(--branco);
   border-bottom-left-radius: 0;
 }
 
-/* Indicador de digitação */
-.typingIndicator {
+.textoMsg {
+  font-size: 1rem;
+}
+
+/* Digitando */
+.digitando {
   display: flex;
   gap: 4px;
 }
 
-.typingIndicator span {
+.digitando span {
   width: 6px;
   height: 6px;
   background-color: var(--amarelo);
   border-radius: 50%;
-  animation: blink 1s infinite;
+  animation: piscar 1s infinite;
 }
 
-.typingIndicator span:nth-child(2) {
+.digitando span:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.typingIndicator span:nth-child(3) {
+.digitando span:nth-child(3) {
   animation-delay: 0.4s;
 }
 
-@keyframes blink {
-  0%, 80%, 100% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
+@keyframes piscar {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
 }
 
-/* Input e botão */
-.chatInput {
+/* Entrada de mensagem */
+.entradaChat {
   display: flex;
   border-top: 1px solid var(--amarelo);
   background-color: var(--cinza);
   padding: 0.5rem;
 }
 
-.chatInput input {
+.entradaChat input {
   flex: 1;
   padding: 0.75rem 1rem;
   border-radius: 8px;
@@ -138,7 +138,7 @@ h2 {
   font-size: 1rem;
 }
 
-.chatInput button {
+.entradaChat button {
   margin-left: 0.5rem;
   padding: 0.75rem 1.2rem;
   background-color: var(--amarelo);
@@ -150,14 +150,14 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.chatInput button:hover {
+.entradaChat button:hover {
   background-color: var(--preto);
   color: var(--amarelo);
   outline: 1px solid var(--amarelo);
 }
 
-/* Disclaimer abaixo do chat */
-.disclaimer {
+/* Aviso */
+.aviso {
   text-align: center;
   margin-top: 1rem;
   font-size: 0.85rem;
@@ -165,7 +165,7 @@ h2 {
 }
 
 /* === LOGIN / CADASTRO === */
-.loginContainer {
+.caixaLogin {
   background: var(--pretoSla);
   padding: 2rem;
   border-radius: 12px;
@@ -175,28 +175,28 @@ h2 {
   margin: 2rem auto;
 }
 
-.loginForm {
+.formLogin {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.loginForm.hidden {
+.formLogin.escondido {
   display: none;
 }
 
-.formGroup {
+.linhaForm {
   display: flex;
   flex-direction: column;
 }
 
-.formGroup label {
+.linhaForm label {
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
   color: var(--amarelo);
 }
 
-.formGroup input {
+.linhaForm input {
   padding: 0.6rem;
   border-radius: 8px;
   border: 1px solid var(--preto);
@@ -206,11 +206,11 @@ h2 {
   transition: border 0.2s;
 }
 
-.formGroup input:focus {
+.linhaForm input:focus {
   border-color: var(--amarelo);
 }
 
-.btnLogin {
+.botaoLogin {
   padding: 0.7rem;
   background: var(--amarelo);
   border: none;
@@ -221,40 +221,39 @@ h2 {
   transition: background 0.3s;
 }
 
-.btnLogin:hover {
+.botaoLogin:hover {
   background-color: var(--preto);
   color: var(--amarelo);
   outline: 1px solid var(--amarelo);
 }
 
-.toggleForm {
+.trocarForm {
   font-size: 0.9rem;
   color: var(--branco);
   text-align: center;
 }
 
-.toggleForm a {
+.trocarForm a {
   color: var(--amarelo);
   cursor: pointer;
   text-decoration: underline;
 }
 
-
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
-  .chatContainer {
+  .caixaChat {
     height: 500px;
   }
 
-  .message {
+  .msg {
     max-width: 90%;
   }
 
-  .chatInput input {
+  .entradaChat input {
     font-size: 0.9rem;
   }
 
-  .chatInput button {
+  .entradaChat button {
     font-size: 0.9rem;
   }
 }

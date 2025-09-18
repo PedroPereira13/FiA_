@@ -1,40 +1,40 @@
 import "./Inicial.css";
 
 import { Link } from "react-router-dom";
-import { Servicos } from "../Servicos";
 
 function Inicial() {
   return (
-    <div class="container">
-      <section class="hero">
+    <div className="caixa">
+      <section className="principal">
         <h1>Revolucione suas finanças com IA</h1>
         <p>
           Nossa plataforma utiliza inteligência artificial para otimizar seus
           investimentos, reduzir custos e maximizar seus rendimentos de forma
           automática e inteligente.
         </p>
-        <Link path="/servicos" element={<Servicos />} class="cta-button">Comece Agora</Link>
+        {/* O Link está correto, não precisa alterar */}
+        <Link to="/Servicos" className="botao">Comece Agora</Link>
       </section>
 
-      <section class="features">
-        <div class="feature-card">
-          <div class="feature-icon">📈</div>
+      <section className="recursos">
+        <div className="card-recurso">
+          <div className="icone-recurso">📈</div>
           <h3>Análise Preditiva</h3>
           <p>
             Nossa IA analisa padrões de mercado para prever tendências e
             oferecer recomendações de investimento personalizadas.
           </p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🤖</div>
+        <div className="card-recurso">
+          <div className="icone-recurso">🤖</div>
           <h3>Automação Inteligente</h3>
           <p>
             Automatize suas finanças com algoritmos que aprendem com seus
             hábitos e otimizam suas decisões financeiras.
           </p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
+        <div className="card-recurso">
+          <div className="icone-recurso">🔒</div>
           <h3>Segurança Máxima</h3>
           <p>
             Tenha seu dinheiro nos investimentos mais seguros e mais lucrativos.
@@ -42,11 +42,11 @@ function Inicial() {
         </div>
       </section>
 
-      <section class="demo-section">
+      <section className="demo">
         <h2>Visualize seu Potencial</h2>
-        <div class="demo-container">
-          <div class="demo-chart"></div>
-          <div class="demo-text">
+        <div className="caixa-demo">
+          <div className="grafico-demo"></div>
+          <div className="texto-demo">
             <h3>+70% de eficiência em investimentos</h3>
             <p>
               Nossos algoritmos de machine learning analisam milhares de
@@ -61,44 +61,44 @@ function Inicial() {
         </div>
       </section>
 
-      <section class="testimonials">
+      <section className="comentarios">
         <h2>O que nossos clientes dizem</h2>
-        <div class="testimonial-cards">
-          <div class="testimonial-card">
-            <p class="testimonial-text">
+        <div className="caixa-comentario">
+          <div className="card-comentario">
+            <p className="texto-comentario">
               A FiA transformou completamente minha relação com o dinheiro. Em
               3 meses já obtive retornos que não conseguiria em anos com meus
               métodos anteriores.
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">MC</div>
+            <div className="autor">
+              <div className="foto-autor">MC</div>
               <div>
                 <h4>Maria Carvalho</h4>
                 <p>Investidora</p>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">
+          <div className="card-comentario">
+            <p className="texto-comentario">
               Como pequeno empresário, a análise preditiva da FiA me ajudou a
               tomar decisões cruciais que aumentaram meu fluxo de caixa em 45%.
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">PS</div>
+            <div className="autor">
+              <div className="foto-autor">PS</div>
               <div>
                 <h4>Pedro Silva</h4>
                 <p>Empresário</p>
               </div>
             </div>
           </div>
-          <div class="testimonial-card">
-            <p class="testimonial-text">
+          <div className="card-comentario">
+            <p className="texto-comentario">
               A interface intuitiva e os insights profundos tornaram a gestão
               das minhas finanças algo simples e prazeroso. Recomendo para
               todos!
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar">AS</div>
+            <div className="autor">
+              <div className="foto-autor">AS</div>
               <div>
                 <h4>Ana Souza</h4>
                 <p>Arquiteta</p>
