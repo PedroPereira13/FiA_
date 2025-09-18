@@ -10,12 +10,12 @@
   padding: 0 20px;
 }
 
-.x{
-  display: grid
-;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+.x {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+  gap: 30px;
 }
+
 /* Header */
 .sobre-header {
   background-color: var(--cinza);
@@ -24,7 +24,6 @@
 }
 
 .sobre-header h1 {
-  
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -33,22 +32,10 @@
   color: var(--amarelo);
 }
 
-/* Grids */
-.grid-duas-colunas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
+/* Grid fixa em 3 colunas */
 .grid-tres-colunas {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
-}
-
-.grid-quatro-colunas {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
   gap: 30px;
 }
 
@@ -66,7 +53,10 @@
 }
 
 /* Seções */
-.missao-visao, .diferenciais, .equipe, .cta-final {
+.missao-visao,
+.diferenciais,
+.equipe,
+.cta-final {
   padding: 80px 0;
 }
 
@@ -99,7 +89,6 @@
 /* Equipe */
 .descricao-equipe {
   text-align: center;
-  space: around;
   margin-bottom: 50px;
   max-width: 600px;
   margin-left: auto;
@@ -160,16 +149,15 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .grid-duas-colunas, 
-  .grid-tres-colunas, 
-  .grid-quatro-colunas {
-    grid-template-columns: 1fr;
+  .x,
+  .grid-tres-colunas {
+    grid-template-columns: 1fr; /* no celular fica 1 coluna */
   }
-  
-  .sobre-header, 
-  .missao-visao, 
-  .diferenciais, 
-  .equipe, 
+
+  .sobre-header,
+  .missao-visao,
+  .diferenciais,
+  .equipe,
   .cta-final {
     padding: 50px 0;
   }
