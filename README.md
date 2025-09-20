@@ -10,7 +10,6 @@
 - Pedro Antonio Ribeiro Pereira  
 - Edgar Santore Cavalini  
 - Lucca Casarin Faria  
-- Raphael Eduardo Lopes Garcia  
 
 ## 📝 Descrição do projeto  
 Nosso projeto tenta solucionar o problema que brasileiros têm de administrar suas finanças, resolvendo essa dificuldade com uma **IA que auxilia na administração financeira**.
