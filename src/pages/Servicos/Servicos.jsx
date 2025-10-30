@@ -1,9 +1,12 @@
-import { useState, useRef, useEffect } from 'react'; 
+import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Servicos.css';
-import { authService } from './auth';
-import { chatService } from './chatService';
+
+import { authService } from '../../services/auth';
+import { chatService } from '../../services/chatService';
 
 const Servicos = () => {
+  const navigate = useNavigate();
   const [messages, setMessages] = useState([
     { 
       id: Date.now(),
@@ -14,25 +17,60 @@ const Servicos = () => {
   const [inputText, setInputText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showLogin, setShowLogin] = useState(true);
   const [user, setUser] = useState(null);
-
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
-  const [registerName, setRegisterName] = useState("");
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const [registerConfirmPassword, setRegisterConfirmPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const mensagensRef = useRef(null);
 
+  // Verifica autenticação inicial e adiciona listener
   useEffect(() => {
-    const loggedIn = authService.isLoggedIn();
-    setIsLoggedIn(loggedIn);
-    if (loggedIn) setUser(authService.getCurrentUser());
-    window.scrollTo(0, 0);
+    const checkAuthStatus = async () => {
+      try {
+        setIsLoading(true);
+        const loggedIn = await authService.isLoggedIn();
+        setIsLoggedIn(loggedIn);
+
+        if (loggedIn) {
+          const userData = await authService.getCurrentUser();
+          setUser(userData);
+        }
+      } catch (error) {
+        console.error('Erro ao verificar autenticação:', error);
+        setIsLoggedIn(false);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkAuthStatus();
+
+    const unsubscribe = authService.onAuthStateChange((firebaseUser) => {
+      if (firebaseUser) {
+        const userData = {
+          uid: firebaseUser.uid,
+          name: firebaseUser.displayName || 'Usuário',
+          email: firebaseUser.email,
+          initials: (firebaseUser.displayName || 'U').split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2)
+        };
+        setIsLoggedIn(true);
+        setUser(userData);
+      } else {
+        setIsLoggedIn(false);
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
 
+  // Redireciona para login se não estiver logado
+  useEffect(() => {
+    if (!isLoading && !isLoggedIn) {
+      navigate("/login");
+    }
+  }, [isLoading, isLoggedIn, navigate]);
+
+  // Scroll automático
   useEffect(() => {
     setTimeout(() => {
       if (mensagensRef.current) {
@@ -41,11 +79,11 @@ const Servicos = () => {
     }, 100);
   }, [messages, isTyping]);
 
+  // Envia mensagem para IA
   const getAIResponse = async (userMessage) => {
     setIsTyping(true);
-    let aiText = "";
     try {
-      aiText = await chatService.getAIResponse(userMessage);
+      const aiText = await chatService.getAIResponse(userMessage);
 
       let displayedText = "";
       for (let i = 0; i < aiText.length; i++) {
@@ -66,7 +104,11 @@ const Servicos = () => {
       setMessages(prev => prev.map(m => m.isTemp ? { ...m, isTemp: false } : m));
     } catch (error) {
       console.error("Erro na IA:", error);
-      setMessages(prev => [...prev, { id: Date.now(), text: "Desculpe, estou com problemas técnicos. Tente novamente mais tarde.", sender: "bot" }]);
+      setMessages(prev => [...prev, { 
+        id: Date.now(), 
+        text: "Desculpe, estou com problemas técnicos. Tente novamente mais tarde.", 
+        sender: "bot" 
+      }]);
     } finally {
       setIsTyping(false);
     }
@@ -90,121 +132,51 @@ const Servicos = () => {
     }
   };
 
-  const handleLogin = () => {
-    if (!loginEmail || !loginPassword) {
-      alert('Por favor, preencha todos os campos.');
-      return;
-    }
-
-    const result = authService.login(loginEmail, loginPassword);
-
-    if (result.success) {
-      setIsLoggedIn(true);
-      setUser(result.user);
-      setLoginEmail("");
-      setLoginPassword("");
-    } else {
-      alert(result.error);
+  const handleLogout = async () => {
+    try {
+      await authService.logout();
+      setIsLoggedIn(false);
+      setUser(null);
+      setMessages([{
+        id: Date.now(),
+        text: "Olá! Sou o assistente virtual da FinAI. Como posso ajudá-lo com suas finanças hoje?", 
+        sender: "bot"
+      }]);
+      navigate("/login");
+    } catch (error) {
+      console.error('Erro ao fazer logout:', error);
+      alert('Erro ao fazer logout. Tente novamente.');
     }
   };
 
-  const handleRegister = () => {
-    if (!registerName || !registerEmail || !registerPassword || !registerConfirmPassword) {
-      alert('Por favor, preencha todos os campos.');
-      return;
-    }
-
-    if (registerPassword !== registerConfirmPassword) {
-      alert('As senhas não coincidem.');
-      return;
-    }
-
-    const result = authService.register(
-      registerName, 
-      registerEmail, 
-      registerPassword, 
-      registerConfirmPassword
+  if (isLoading) {
+    return (
+      <div className="telaChat">
+        <h2>Assistente Financeiro Pessoal</h2>
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Carregando...</p>
+        </div>
+      </div>
     );
-
-    if (result.success) {
-      alert('Conta criada com sucesso! Faça login para continuar.');
-      setShowLogin(true);
-      setRegisterName("");
-      setRegisterEmail("");
-      setRegisterPassword("");
-      setRegisterConfirmPassword("");
-    } else {
-      alert(result.error);
-    }
-  };
-
-  const handleLogout = () => {
-    authService.logout();
-    setIsLoggedIn(false);
-    setUser(null);
-    setMessages([{ 
-      id: Date.now(),
-      text: "Olá! Sou o assistente virtual da FinAI. Como posso ajudá-lo com suas finanças hoje?", 
-      sender: "bot" 
-    }]);
-  };
+  }
 
   return (
     <div className="telaChat">
       <h2>Assistente Financeiro Pessoal</h2>
 
-      {!isLoggedIn && (
-        <div className="caixaLogin">
-          <div className={`formLogin ${showLogin ? '' : 'escondido'}`}>
-            <h2>Faça login para continuar</h2>
-            <div className="linhaForm">
-              <label htmlFor="loginEmail">E-mail</label>
-              <input type="email" id="loginEmail" value={loginEmail} onChange={e => setLoginEmail(e.target.value)} placeholder="Seu e-mail" />
-            </div>
-            <div className="linhaForm">
-              <label htmlFor="loginPassword">Senha</label>
-              <input type="password" id="loginPassword" value={loginPassword} onChange={e => setLoginPassword(e.target.value)} placeholder="Sua senha" />
-            </div>
-            <button className="botaoLogin" onClick={handleLogin}>Entrar</button>
-            <div className="trocarForm">
-              Não tem uma conta? <a href="#" onClick={(e) => { e.preventDefault(); setShowLogin(false); }}>Cadastre-se</a>
-            </div>
-          </div>
-
-          <div className={`formLogin ${showLogin ? 'escondido' : ''}`}>
-            <h2>Criar uma conta</h2>
-            <div className="linhaForm">
-              <label htmlFor="registerName">Nome completo</label>
-              <input type="text" id="registerName" value={registerName} onChange={e => setRegisterName(e.target.value)} placeholder="Seu nome completo" />
-            </div>
-            <div className="linhaForm">
-              <label htmlFor="registerEmail">E-mail</label>
-              <input type="email" id="registerEmail" value={registerEmail} onChange={e => setRegisterEmail(e.target.value)} placeholder="Seu e-mail" />
-            </div>
-            <div className="linhaForm">
-              <label htmlFor="registerPassword">Senha</label>
-              <input type="password" id="registerPassword" value={registerPassword} onChange={e => setRegisterPassword(e.target.value)} placeholder="Crie uma senha" />
-            </div>
-            <div className="linhaForm">
-              <label htmlFor="registerConfirmPassword">Confirmar senha</label>
-              <input type="password" id="registerConfirmPassword" value={registerConfirmPassword} onChange={e => setRegisterConfirmPassword(e.target.value)} placeholder="Confirme sua senha" />
-            </div>
-            <button className="botaoLogin" onClick={handleRegister}>Criar conta</button>
-            <div className="trocarForm">
-              Já tem uma conta? <a href="#" onClick={(e) => { e.preventDefault(); setShowLogin(true); }}>Faça login</a>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {isLoggedIn && (
+      {isLoggedIn && user && (
         <>
           <div className="caixaChat">
             <div className="topoChat">
-              <div className="iconeChat">AI</div>
-              <div>
+              <div className="iconeChat">{user.initials || 'AI'}</div>
+              <div className="infoUsuario">
                 <h3>Assistente FinAI</h3>
                 <p>Online - Pronto para ajudar</p>
+                <div className="usuarioInfo">
+                  <span>Logado como: {user.name}</span>
+                  <button onClick={handleLogout} className="botaoSair">Sair</button>
+                </div>
               </div>
             </div>
 
@@ -232,8 +204,14 @@ const Servicos = () => {
                 onChange={e => setInputText(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Digite sua pergunta sobre finanças..."
+                disabled={isTyping}
               />
-              <button onClick={handleSendMessage} disabled={!inputText.trim()}>Enviar</button>
+              <button 
+                onClick={handleSendMessage} 
+                disabled={!inputText.trim() || isTyping}
+              >
+                {isTyping ? 'Digitando...' : 'Enviar'}
+              </button>
             </div>
           </div>
 

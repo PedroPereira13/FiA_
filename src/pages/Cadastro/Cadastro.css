@@ -1,0 +1,152 @@
+:root {
+  --preto: #0d0d0e;
+  --pretoSla: #1a1a1a;
+  --amarelo: #FFD60A;
+  --cinza: #2C2C2C;
+  --branco: #FFFFFF;
+  --cinza-claro: #ccc;
+}
+
+.caixaLogin {
+  background: var(--pretoSla);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.formLogin h2 {
+  text-align: center;
+  color: var(--amarelo);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.linhaForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.linhaForm label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--amarelo);
+  font-weight: 600;
+}
+
+.linhaForm input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--cinza);
+  background: var(--preto);
+  color: var(--branco);
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.linhaForm input:focus {
+  border-color: var(--amarelo);
+  box-shadow: 0 0 0 2px rgba(255, 214, 10, 0.2);
+}
+
+.linhaForm input::placeholder {
+  color: var(--cinza-claro);
+}
+
+.botaoLogin {
+  padding: 0.9rem;
+  background: var(--amarelo);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--preto);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.botaoLogin:hover {
+  background-color: var(--preto);
+  color: var(--amarelo);
+  outline: 2px solid var(--amarelo);
+  transform: translateY(-2px);
+}
+
+.botaoLogin:active {
+  transform: translateY(0);
+}
+
+.trocarForm {
+  font-size: 0.9rem;
+  color: var(--branco);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.trocarForm a {
+  color: var(--amarelo);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.trocarForm a:hover {
+  color: #ffed4e;
+  text-decoration: underline;
+}
+
+/* Estilos específicos para Cadastro */
+.cadastro-container {
+  max-width: 450px;
+}
+
+.senha-info {
+  font-size: 0.8rem;
+  color: var(--cinza-claro);
+  margin-top: 0.3rem;
+}
+
+/* Responsivo para Cadastro */
+@media (max-width: 768px) {
+  .caixaLogin {
+    margin: 1rem auto;
+    padding: 1.5rem;
+  }
+  
+  .formLogin {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formLogin {
+    gap: 1rem;
+  }
+  
+  .linhaForm input {
+    padding: 0.7rem;
+  }
+  
+  .botaoLogin {
+    padding: 0.8rem;
+  }
+  
+  .formLogin h2 {
+    font-size: 1.3rem;
+  }
+  
+  .cadastro-container {
+    max-width: 100%;
+  }
+}
