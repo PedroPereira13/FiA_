@@ -15,7 +15,7 @@
 Nosso projeto tenta solucionar o problema que brasileiros têm de administrar suas finanças, resolvendo essa dificuldade com uma **IA que auxilia na administração financeira**.
 
 ## Deploy
-https://fi-a-v165.vercel.app
+https://fia-invest.web.app
 
 ## Video de apresentação
 https://drive.google.com/file/d/1PlUNHcD9Wi27v4nqgKZCPpIbrpGf6d6q/view?usp=drivesdk 
