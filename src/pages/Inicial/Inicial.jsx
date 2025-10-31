@@ -12,7 +12,7 @@ function Inicial() {
           investimentos, reduzir custos e maximizar seus rendimentos de forma
           automática e inteligente.
         </p>
-        {/* O Link está correto, não precisa alterar */}
+        
         <Link to="/Servicos" className="botao">Comece Agora</Link>
       </section>
 

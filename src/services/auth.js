@@ -8,13 +8,12 @@ import {
 } from 'firebase/auth';
 import { auth } from './firebaseConfig';
 
-// Verifica se o Firebase Auth está disponível
+
 const isFirebaseAuthAvailable = () => {
   return auth && typeof auth !== 'undefined';
 };
 
 export const authService = {
-  // Verifica se o usuário está logado
   isLoggedIn: () => {
     return new Promise((resolve) => {
       if (!isFirebaseAuthAvailable()) {
@@ -25,7 +24,7 @@ export const authService = {
 
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         unsubscribe();
-        resolve(!!user); // Remove a verificação de email
+        resolve(!!user); 
       }, (error) => {
         console.error('Erro ao verificar estado de autenticação:', error);
         resolve(false);
@@ -33,7 +32,7 @@ export const authService = {
     });
   },
 
-  // Login com email e senha
+
   login: async (email, password) => {
     try {
       if (!isFirebaseAuthAvailable()) {
@@ -47,7 +46,7 @@ export const authService = {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // REMOVIDO: Verificação de email
+
       const userData = {
         uid: user.uid,
         name: user.displayName || 'Usuário',
@@ -55,7 +54,6 @@ export const authService = {
         initials: (user.displayName || 'U').split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2)
       };
 
-      // Salva informações básicas no localStorage para acesso rápido
       localStorage.setItem('finai_user_data', JSON.stringify(userData));
 
       return { 
@@ -94,14 +92,13 @@ export const authService = {
     }
   },
 
-  // Registro de novo usuário
+
   register: async (name, email, password, confirmPassword) => {
     try {
       if (!isFirebaseAuthAvailable()) {
         return { success: false, error: 'Serviço de autenticação não disponível.' };
       }
 
-      // Validações
       if (!name || !email || !password || !confirmPassword) {
         return { success: false, error: 'Todos os campos são obrigatórios.' };
       }
@@ -114,16 +111,13 @@ export const authService = {
         return { success: false, error: 'A senha deve ter pelo menos 6 caracteres.' };
       }
 
-      // Cria o usuário no Firebase
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Atualiza o perfil com o nome
       await updateProfile(user, {
         displayName: name
       });
 
-      // REMOVIDO: Envio de email de verificação
 
       const userData = {
         uid: user.uid,
@@ -166,7 +160,6 @@ export const authService = {
     }
   },
 
-  // Logout
   logout: async () => {
     try {
       if (!isFirebaseAuthAvailable()) {
@@ -181,11 +174,11 @@ export const authService = {
     }
   },
 
-  // Obtém usuário atual
+  
   getCurrentUser: () => {
     return new Promise((resolve) => {
       if (!isFirebaseAuthAvailable()) {
-        // Tenta recuperar do localStorage como fallback
+       
         const storedUser = localStorage.getItem('finai_user_data');
         resolve(storedUser ? JSON.parse(storedUser) : null);
         return;
@@ -194,7 +187,7 @@ export const authService = {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         unsubscribe();
         
-        if (user) { // REMOVIDO: Verificação de emailVerified
+        if (user) {
           const userData = {
             uid: user.uid,
             name: user.displayName || 'Usuário',
@@ -203,7 +196,7 @@ export const authService = {
           };
           resolve(userData);
         } else {
-          // Tenta recuperar do localStorage como fallback
+         
           const storedUser = localStorage.getItem('finai_user_data');
           resolve(storedUser ? JSON.parse(storedUser) : null);
         }
@@ -215,7 +208,7 @@ export const authService = {
     });
   },
 
-  // Redefinição de senha
+
   resetPassword: async (email) => {
     try {
       if (!isFirebaseAuthAvailable()) {
@@ -254,7 +247,6 @@ export const authService = {
     }
   },
 
-  // Observer para mudanças de autenticação
   onAuthStateChange: (callback) => {
     if (!isFirebaseAuthAvailable()) {
       console.warn('Firebase Auth não disponível para observer');

@@ -36,7 +36,7 @@ const Cadastro = () => {
       setRegisterPassword("");
       setRegisterConfirmPassword("");
 
-      // Redireciona para a última página
+      
       navigate(from, { replace: true });
     } else {
       alert(result.error);
@@ -115,7 +115,7 @@ const Cadastro = () => {
         Já tem uma conta? 
         <a href="#" onClick={(e) => { 
             e.preventDefault(); 
-            navigate('/login', { state: { from } }); // passa a última página
+            navigate('/login', { state: { from } }); 
         }}>
           Faça login
         </a>

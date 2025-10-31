@@ -6,7 +6,6 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Verifica o estado de autenticação inicial
     const checkAuth = async () => {
       try {
         setLoading(true);
@@ -28,7 +27,6 @@ export const useAuth = () => {
 
     checkAuth();
 
-    // Listener para mudanças de autenticação em tempo real
     const unsubscribe = authService.onAuthStateChange((firebaseUser) => {
       if (firebaseUser && firebaseUser.emailVerified) {
         const userData = {
@@ -45,7 +43,7 @@ export const useAuth = () => {
       setLoading(false);
     });
 
-    // Cleanup do listener
+   
     return () => unsubscribe();
   }, []);
 

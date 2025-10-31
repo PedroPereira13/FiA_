@@ -6,7 +6,8 @@ import './Login.css';
 const Login = ({ onLoginSuccess, onClose }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/'; // página anterior ou home
+  
+  const from = location.state?.from?.pathname || '/servicos'; 
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -25,14 +26,17 @@ const Login = ({ onLoginSuccess, onClose }) => {
     setIsLoading(false);
 
     if (result.success) {
-      onLoginSuccess(result.user);
+      if (onLoginSuccess) {
+        onLoginSuccess(result.user);
+      }
+      
       setLoginEmail("");
       setLoginPassword("");
 
-      // Fecha o login/modal
-      if (onClose) onClose();
+      if (onClose) {
+        onClose();
+      }
 
-      // Redireciona para a última página
       navigate(from, { replace: true });
     } else {
       alert(result.error);
@@ -141,7 +145,7 @@ const Login = ({ onLoginSuccess, onClose }) => {
         Não tem uma conta? 
         <a href="#" onClick={(e) => { 
             e.preventDefault(); 
-            navigate('/cadastro', { state: { from } }); // passa a última página
+            navigate('/cadastro', { state: { from } }); 
         }}>
           Cadastre-se
         </a>
