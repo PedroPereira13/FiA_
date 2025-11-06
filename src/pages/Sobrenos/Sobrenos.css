@@ -16,9 +16,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
-/* Header */
+
 .sobre-header {
-  background-color: var(--cinza);
+
   padding: 80px 0;
   text-align: center;
 }
@@ -33,7 +33,7 @@
   color: var(--amarelo);
 }
 
-/* Grids */
+
 .grid-duas-colunas {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -54,14 +54,13 @@
 
 .equipe-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-  justify-items: center; /* centraliza cada item horizontalmente */
-  gap: 40px; /* espaço entre os membros */
-  max-width: 900px; /* opcional, limita a largura da grid */
-  margin: 0 auto; /* centraliza a grid na página */
+  grid-template-columns: repeat(3, 1fr); 
+  justify-items: center; 
+  gap: 40px; 
+  max-width: 900px;
+  margin: 0 auto; 
 }
 
-/* Cards */
 .card {
   background-color: var(--cinza);
   padding: 30px;
@@ -74,7 +73,7 @@
   margin-bottom: 15px;
 }
 
-/* Seções */
+
 .missao-visao, .diferenciais, .equipe, .cta-final {
   padding: 80px 0;
 }
@@ -86,7 +85,7 @@
   color: var(--amarelo);
 }
 
-/* Diferenciais */
+
 .diferencial-item {
   text-align: center;
   padding: 30px 20px;
@@ -105,7 +104,7 @@
   margin-bottom: 15px;
 }
 
-/* Equipe */
+
 .descricao-equipe {
   text-align: center;
   margin-bottom: 50px;
@@ -134,7 +133,7 @@
   color: var(--cinza-claro);
 }
 
-/* CTA */
+
 .cta-final {
   background-color: var(--cinza);
   text-align: center;
@@ -166,7 +165,7 @@
   outline: 1px solid var(--amarelo);
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
   .grid-duas-colunas, 
   .grid-tres-colunas, 

@@ -1,0 +1,131 @@
+:root {
+  --preto: #0d0d0e;
+  --amarelo: #FFD60A;
+  --cinza: #2C2C2C;
+  --branco: #FFFFFF;
+  --cinza-claro: #ccc;
+  --font-family: 'Arial', sans-serif;
+}
+
+.termos-container {
+  color: var(--branco);
+  line-height: 1.6;
+  min-height: 100vh;
+  font-family: var(--font-family);
+}
+
+.termos-header {
+
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.termos-header h1 {
+  font-size: 3rem;
+  color: var(--branco);
+  margin-bottom: 1rem;
+}
+
+.termos-header .destaque {
+  color: var(--amarelo);
+}
+
+.termos-header p {
+  color: var(--cinza-claro);
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.termos-conteudo {
+  padding: 4rem 0;
+  background-color: var(--preto);
+}
+
+.termos-cta {
+  padding: 4rem 0;
+  background-color: var(--cinza);
+}
+
+.termos-contato {
+  text-align: center;
+  background-color: var(--preto);
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.termos-contato p {
+  color: var(--cinza-claro);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.termos-contato strong {
+  color: var(--amarelo);
+  font-size: 1.2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.grid-duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: var(--cinza);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-full {
+  background-color: var(--cinza);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  color: var(--amarelo);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--cinza-claro);
+  text-align: justify;
+}
+
+.fabutton {
+  background-color: var(--amarelo);
+  color: var(--preto);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.fabutton:hover {
+  background-color: var(--preto);
+  color: var(--amarelo);
+  outline: 1px solid var(--amarelo);
+}
+
+@media (max-width: 768px) {
+  .grid-duas-colunas {
+    grid-template-columns: 1fr;
+  }
+  
+  .termos-header h1 {
+    font-size: 2.5rem;
+  }
+}

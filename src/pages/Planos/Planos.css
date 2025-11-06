@@ -1,0 +1,361 @@
+:root {
+  --preto: #0d0d0e;
+  --amarelo: #FFD60A;
+  --cinza: #2C2C2C;
+  --branco: #FFFFFF;
+  --cinza-claro: #ccc;
+  --font-family: 'Arial', sans-serif;
+}
+
+.planos-container {
+  color: var(--branco);
+  line-height: 1.6;
+  min-height: 100vh;
+  font-family: var(--font-family);
+}
+
+.planos-header {
+  
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.planos-header h1 {
+  font-size: 3rem;
+  color: var(--branco);
+  margin-bottom: 1rem;
+}
+
+.planos-header .destaque {
+  color: var(--amarelo);
+}
+
+.planos-header p {
+  color: var(--cinza-claro);
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.planos-conteudo {
+  padding: 4rem 0;
+  background-color: var(--preto);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.plano-card {
+  background-color: var(--cinza);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.plano-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.plano-card.popular {
+  border-color: var(--amarelo);
+  transform: scale(1.05);
+}
+
+.plano-card.popular:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.badge-popular {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--amarelo);
+  color: var(--preto);
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.plano-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #444;
+}
+
+.plano-header h3 {
+  font-size: 1.8rem;
+  color: var(--branco);
+  margin-bottom: 1rem;
+}
+
+.preco {
+  margin-bottom: 1rem;
+}
+
+.valor {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--amarelo);
+}
+
+.periodo {
+  font-size: 1.2rem;
+  color: var(--cinza-claro);
+}
+
+.descricao {
+  color: var(--cinza-claro);
+  font-style: italic;
+}
+
+.plano-recursos {
+  margin-bottom: 2rem;
+}
+
+.plano-recursos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plano-recursos li {
+  padding: 0.8rem 0;
+  color: var(--cinza-claro);
+  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+}
+
+.plano-recursos li:last-child {
+  border-bottom: none;
+}
+
+.check {
+  color: var(--amarelo);
+  font-weight: bold;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.plano-acoes {
+  text-align: center;
+}
+
+.btn-plano {
+  display: block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid var(--amarelo);
+  background-color: transparent;
+  color: var(--amarelo);
+}
+
+.btn-plano:hover {
+  background-color: var(--amarelo);
+  color: var(--preto);
+  transform: translateY(-2px);
+}
+
+.btn-popular {
+  background-color: var(--amarelo);
+  color: var(--preto);
+}
+
+.btn-popular:hover {
+  background-color: #e6b800;
+}
+
+/* Comparação */
+.comparacao {
+  padding: 4rem 0;
+  background-color: var(--cinza);
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--branco);
+  margin-bottom: 3rem;
+}
+
+.tabela-comparacao {
+  overflow-x: auto;
+}
+
+.tabela-comparacao table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--preto);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabela-comparacao th,
+.tabela-comparacao td {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+.tabela-comparacao th {
+  background-color: var(--amarelo);
+  color: var(--preto);
+  font-weight: bold;
+}
+
+.tabela-comparacao th:first-child {
+  background-color: var(--cinza);
+  color: var(--branco);
+}
+
+.tabela-comparacao tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* FAQ */
+.planos-faq {
+  padding: 4rem 0;
+  background-color: var(--preto);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.faq-item {
+  background-color: var(--cinza);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--amarelo);
+}
+
+.faq-item h3 {
+  color: var(--amarelo);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.faq-item p {
+  color: var(--cinza-claro);
+  line-height: 1.6;
+}
+
+/* CTA */
+.planos-cta {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--cinza) 0%, var(--preto) 100%);
+  text-align: center;
+}
+
+.planos-cta h2 {
+  font-size: 2.5rem;
+  color: var(--branco);
+  margin-bottom: 1rem;
+}
+
+.planos-cta p {
+  color: var(--cinza-claro);
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primario, .btn-secundario {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primario {
+  background-color: var(--amarelo);
+  color: var(--preto);
+}
+
+.btn-primario:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--amarelo);
+  border: 2px solid var(--amarelo);
+}
+
+.btn-secundario:hover {
+  background-color: var(--amarelo);
+  color: var(--preto);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .planos-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .plano-card.popular {
+    transform: none;
+  }
+  
+  .plano-card.popular:hover {
+    transform: translateY(-5px);
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .planos-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primario, .btn-secundario {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .tabela-comparacao {
+    font-size: 0.9rem;
+  }
+  
+  .tabela-comparacao th,
+  .tabela-comparacao td {
+    padding: 1rem 0.5rem;
+  }
+}

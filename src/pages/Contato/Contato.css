@@ -1,0 +1,222 @@
+:root {
+  --preto: #0d0d0e;
+  --amarelo: #FFD60A;
+  --cinza: #2C2C2C;
+  --branco: #FFFFFF;
+  --cinza-claro: #ccc;
+  --font-family: 'Arial', sans-serif;
+}
+
+.contato-container {
+  color: var(--branco);
+  line-height: 1.6;
+  min-height: 100vh;
+  font-family: var(--font-family);
+}
+
+.contato-header {
+
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contato-header h1 {
+  font-size: 3rem;
+  color: var(--branco);
+  margin-bottom: 1rem;
+}
+
+.contato-header .destaque {
+  color: var(--amarelo);
+}
+
+.contato-header p {
+  color: var(--cinza-claro);
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.contato-conteudo {
+  padding: 4rem 0;
+  background-color: var(--preto);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.grid-duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.card {
+  background-color: var(--cinza);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  color: var(--amarelo);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: var(--branco);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 1rem;
+  border: 2px solid #444;
+  border-radius: 8px;
+  background-color: var(--preto);
+  color: var(--branco);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--amarelo);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-primario {
+  background-color: var(--amarelo);
+  color: var(--preto);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.btn-primario:hover {
+  background-color: #e6b800;
+  transform: translateY(-2px);
+}
+
+
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateX(5px);
+}
+
+.info-item .icone {
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+
+.info-item h3 {
+  color: var(--amarelo);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-item p {
+  color: var(--cinza-claro);
+  margin: 0.2rem 0;
+}
+
+
+.contato-faq {
+  padding: 4rem 0;
+  background-color: var(--cinza);
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--branco);
+  margin-bottom: 3rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.faq-item {
+  background-color: var(--preto);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--amarelo);
+}
+
+.faq-item h3 {
+  color: var(--amarelo);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.faq-item p {
+  color: var(--cinza-claro);
+  line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+  .grid-duas-colunas {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contato-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+}

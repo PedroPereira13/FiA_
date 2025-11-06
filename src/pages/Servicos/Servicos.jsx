@@ -22,7 +22,6 @@ const Servicos = () => {
 
   const mensagensRef = useRef(null);
 
-  // Verifica autenticação inicial e adiciona listener
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
@@ -63,14 +62,13 @@ const Servicos = () => {
     return () => unsubscribe();
   }, []);
 
-  // Redireciona para login se não estiver logado
+
   useEffect(() => {
     if (!isLoading && !isLoggedIn) {
       navigate("/login");
     }
   }, [isLoading, isLoggedIn, navigate]);
 
-  // Scroll automático
   useEffect(() => {
     setTimeout(() => {
       if (mensagensRef.current) {

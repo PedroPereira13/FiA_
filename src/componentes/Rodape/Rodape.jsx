@@ -1,9 +1,8 @@
+import { Link } from "react-router-dom";
 import style from "./Rodape.module.css";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 
-import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
-
-const Rodape = (props) => {
-  const { criador } = props;
+const Rodape = ({ criador }) => {
   const anoAtual = new Date().getFullYear();
 
   return (
@@ -13,27 +12,25 @@ const Rodape = (props) => {
           <div className={style.coluna}>
             <h4>Produto</h4>
             <ul>
-              <li><a href="#recursos">Recursos</a></li>
-              <li><a href="#planos">Planos</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><Link to="/recursos">Recursos</Link></li>
+              <li><Link to="/planos">Planos</Link></li>
             </ul>
           </div>
 
           <div className={style.coluna}>
             <h4>Empresa</h4>
             <ul>
-              <li><a href="#sobre">Sobre nós</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contato">Contato</a></li>
+              <li><Link to="/sobrenos">Sobre nós</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/contato">Contato</Link></li>
             </ul>
           </div>
 
           <div className={style.coluna}>
             <h4>Legal</h4>
             <ul>
-              <li><a href="#privacidade">Privacidade</a></li>
-              <li><a href="#termos">Termos de uso</a></li>
-              <li><a href="#seguranca">Segurança</a></li>
+              <li><Link to="/privacidade">Privacidade</Link></li>
+              <li><Link to="/termos">Termos de uso</Link></li>
             </ul>
           </div>
 
@@ -57,7 +54,7 @@ const Rodape = (props) => {
                 <Twitter size={24} />
               </a>
               <a
-                href="https://Instagram.com"
+                href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
