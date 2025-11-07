@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
+
 
 
 const firebaseConfig = {
@@ -11,6 +13,7 @@ const firebaseConfig = {
   messagingSenderId: "47086990065",
   appId: "1:47086990065:web:7e25541ea15dd95504af50",
   measurementId: "G-G58BYQYFWG"
+
 };
 
 
@@ -23,9 +26,11 @@ try {
   auth = getAuth(app);
   analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
   console.log('Firebase configurado com sucesso!');
+
 } catch (error) {
   console.error('Erro ao configurar Firebase:', error);
 }
 
-export { auth, analytics };
 export default app;
+export  const db = getFirestore(app);
+export { auth, analytics };

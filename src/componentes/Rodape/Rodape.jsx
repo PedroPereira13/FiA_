@@ -12,7 +12,6 @@ const Rodape = ({ criador }) => {
           <div className={style.coluna}>
             <h4>Produto</h4>
             <ul>
-              <li><Link to="/recursos">Recursos</Link></li>
               <li><Link to="/planos">Planos</Link></li>
             </ul>
           </div>
@@ -21,7 +20,6 @@ const Rodape = ({ criador }) => {
             <h4>Empresa</h4>
             <ul>
               <li><Link to="/sobrenos">Sobre nós</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/contato">Contato</Link></li>
             </ul>
           </div>

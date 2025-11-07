@@ -1,8 +1,14 @@
+import { use, useEffect } from "react";
 import "./Inicial.css";
-
+import { GetUsers } from "../../services/getUsers";
 import { Link } from "react-router-dom";
 
 function Inicial() {
+
+  useEffect(() => {
+    GetUsers ();
+  }, []);
+
   return (
     <div className="caixa">
       <section className="principal">
